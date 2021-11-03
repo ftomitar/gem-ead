@@ -1,0 +1,42 @@
+plugins {
+	id 'java'
+	id 'application'
+	id 'eclipse'
+	id 'org.springframework.boot' version '2.5.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '2.5.3'
+
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+	testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.5.3'
+	
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.5.3'
+	
+    
+	// https://mvnrepository.com/artifact/org.projectlombok/lombok
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+
+    annotationProcessor  group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+    
+    // https://mvnrepository.com/artifact/junit/junit
+	testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+    
+}
+
+test {
+	useJUnitPlatform()
+}
+
+// Define the main class for the application
+group = 'br.org.ccb'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+targetCompatibility = '11'
